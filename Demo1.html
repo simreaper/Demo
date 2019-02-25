@@ -1,0 +1,72 @@
+<html>
+<head></head>
+<body>
+	TERMINATED
+	<button onclick="alertIn()">CLICK</button>
+	<button onclick="confirmIn()">CLICK TO CONFIRM</button>
+	<button onclick="promptIn()">CLICK TO PROMPT</button>
+	<button onclick="openIn()">CLICK TO OPEN</button>
+	<button onclick="setTimeoutIn()">DEMO</button>
+	<form>
+		<input type="text" id="information" /><br>
+		<button type=submit onclick="formSubmit()">Submit</button>
+	</form>
+
+	<form>
+		<input type="text" id="textBox" onkeyup="validate()" /><br>
+		Strength:<span id="span"></span>
+	</form>
+	<script>
+		function alertIn() {
+			alert("Hello");
+		}
+		function confirmIn() {
+			var v = confirm("Are you sure?");
+			if (v == true) {
+				alert("Ok");
+			} else {
+				alert("Discarded");
+			}
+		}
+		function promptIn() {
+			var v = prompt("Username");
+			var q = prompt("Password");
+			alert(v);
+
+		}
+		function openIn() {
+			open("https://google.com");
+
+		}
+		function setTimeoutIn() {
+			setTimeout(function() {
+				alert("THis will show after 2 seconds");
+			}, 2000);
+		}
+
+		document.writeln("<br/>Navigator.appcodeName : "
+				+ navigator.appCodeName);
+		document.writeln("<br/>Navigator.appName : " + navigator.appName);
+		document.writeln("<br/>Navigator.appVersion : " + navigator.appVersion);
+		document.writeln("<br/>Navigator.cookie Enable : "
+				+ navigator.cookieEnabled);
+		document.writeln("<br/>Navigator.language : " + navigator.language);
+		document.writeln("<br/>Navigator.userAgent : " + navigator.userAgent);
+		document.writeln("<br/>Navigator.onLine : " + navigator.onLine);
+		document.writeln("<br/>Navigator.platform : " + navigator.platform);
+		function formSubmit() {
+			var v = document.getElementById("information").value;
+			alert("value given:  " + v);
+		}
+
+		function validate() {
+			var msg;
+			if (document.getElementById("textBox").value.length > 5) {
+				msg = "good";
+			} else {
+				msg = "poor";
+			}
+			document.getElementById("span").innerText = msg;
+		}
+	</script>
+</body>
